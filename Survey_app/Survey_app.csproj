@@ -79,6 +79,9 @@
     <Content Include="Survey\SurveyFirst.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DAO\AnswerDAO.cs" />
+    <Compile Include="Model\DAO\RespondentDAO.cs" />
+    <Compile Include="Model\DAO\StaffDAO.cs" />
     <Compile Include="Staff\StaffSearch.aspx.cs">
       <DependentUpon>StaffSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

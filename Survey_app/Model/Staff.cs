@@ -9,7 +9,7 @@ namespace Survey_app.Model
     {
         //getters and setters
         public int Id { get; set; }
-        public string userName { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
     }
 }

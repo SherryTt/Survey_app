@@ -29,8 +29,8 @@
             </h2>
         </div>
         '<div style="text-align: right" >
-          <a href="">
-        <asp:Button ID="adminBtn" runat="server" Text="ADMIN" style="text-align: right" />
+         <a href="/Staff/StaffLogin.aspx">
+        <input ID="adminBtn" type="button" value="ADMIN" class="auto-style2: right"/><span class="auto-style2"> </span>
         </a></div>
          <div class="auto-style1"style="text-align: left" >
         <br />
