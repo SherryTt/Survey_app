@@ -42,22 +42,22 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Button LogoutBtn;
 
         /// <summary>
-        /// Label2 control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// firstnameTxtBox control.
+        /// firstnameTxtBox0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstnameTxtBox;
+        protected global::System.Web.UI.WebControls.TextBox firstnameTxtBox0;
 
         /// <summary>
         /// Label3 control.
@@ -123,15 +123,6 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// RadioButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
-
-        /// <summary>
         /// RadioButton2 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +130,15 @@ namespace Survey_app
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+
+        /// <summary>
+        /// RadioButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
 
         /// <summary>
         /// Label7 control.
@@ -204,21 +204,21 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Button searchBtn;
 
         /// <summary>
-        /// Label10 control.
+        /// Label13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
-        /// GridView1 control.
+        /// GridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridView;
     }
 }
