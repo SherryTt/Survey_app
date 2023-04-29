@@ -1,37 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using Survey_app.Model;
+using Survey_app.Model.DAO;
 
 namespace Survey_app
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class SurveyFirst : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+  
 
         protected void nextBtn_Click(object sender, EventArgs e)
         {
-            Session["userEmail"] = emailTxtBox.Text;
+
+            Respondent respondent = new Respondent();
+            respondent.res_email = emailTxtBox.Text;
+            respondent.res_Ip = RespondentDAO.GetIPAddress();
+            respondent.res_DateStamp = DateTime.Now;
+
+
+            List<Respondent> respondents = new List<Respondent>();
+            respondents.Add(respondent);
+            Session["SRespondent"] = respondents;
+
+
+            //Anonious case of member register
+            string defaultGiven = "Anonimous";
+            string defaultLast = "Anonimous";
+            DateTime defaultDOB = new DateTime(2020,01,01);
+            int defaultPhone = 000000;
+
+
+            Member member = new Member();
+            member.givenName = defaultGiven;
+            member.lastName = defaultLast;
+            member.DOB = defaultDOB;
+            member.phoneNumber = defaultPhone.ToString();                ;
+
+            if (Session["SMember"] != null)
+            {
+                List<Member> memberList = (List<Member>)Session["SMember"];
+                memberList.Add(member);
+                Session["SMember"] = memberList;
+            }
+            else
+            {
+                List<Member> memberList = new List<Member>();
+                memberList.Add(member);
+                Session["SMember"] = memberList;
+            }
+
             Response.Redirect("SurveyQuestion.aspx");
         }
 
         protected void registerBtn_Click(object sender, EventArgs e)
         {
+           
+            Session["userEmail"] = emailTxtBox.Text;
             Response.Redirect("Register.aspx");
         }
 
@@ -39,5 +68,6 @@ namespace Survey_app
         {
             Response.Redirect("../Default.aspx");
         }
+
     }
 }

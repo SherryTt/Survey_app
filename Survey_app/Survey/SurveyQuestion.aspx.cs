@@ -26,13 +26,16 @@ namespace Survey_app
         Choice choice;
         Button skipBtn;
         List<Choice> choices;
+        List<Choice> choices1;
         TextBox txtAnswer;
         CheckBoxList checkbox;
         DropDownList dropdown;
         RadioButtonList radioButton;
         int questionId;
         int NQuestionId;
-    
+        int txtchoice_id;
+        string choice_txt;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -49,7 +52,6 @@ namespace Survey_app
             {
                 //Continue the QID from previous session
                 nextQID =(int)Session["NextQID"];
-                Console.WriteLine(nextQID);
             }
             else if(Session["NextQID"] == null)
             {   
@@ -59,7 +61,7 @@ namespace Survey_app
 
 
             // Populate the question and choice 
-            Question question = QuestionDAO.GetQuestionById(nextQID);
+            question = QuestionDAO.GetQuestionById(nextQID);
             choices = QuestionDAO.GetChoices(nextQID);
             
            
@@ -81,6 +83,13 @@ namespace Survey_app
                     {
                         //TEXT
                         case "TextBox":
+                            //For gettint choice id from choices list and asign the value
+                            foreach (var choice1 in choices)
+                            {
+                                var itembox = new ListItem(choice1.choice_text, choice1.choice_id.ToString());
+                                txtchoice_id = choice1.choice_id;
+                            }
+
                             txtAnswer = new TextBox();
                             txtAnswer.Attributes["questionId"] = question.q_id.ToString();
                             txtAnswer.ID = "TextA";
@@ -161,10 +170,10 @@ namespace Survey_app
         {
        
             //Controll question order
-            int NQuestionId = (int)Session["NextQID"];
+            NQuestionId = (int)Session["NextQID"];
             Session["NextQID"] = NQuestionId + 1;
 
-            Question question = QuestionDAO.GetQuestionById(NQuestionId);
+            question = QuestionDAO.GetQuestionById(NQuestionId);
             
 
             switch (question.GetQ_type())
@@ -175,10 +184,13 @@ namespace Survey_app
                     {
                         Answer answer = new Answer();
                         answer.a_text = txtAnswer.Text;
-                       // answer.choice_id = null
+                        answer.choice_id = txtchoice_id;
                         answer.question_id =Int16.Parse(txtAnswer.Attributes["questionId"]);
                         Session["NextQID"] = question.q_order;
-                       
+                        int choiceID = answer.choice_id;
+                        choice = QuestionDAO.GetQuestionOrder(choiceID);
+                        Session["NextQID"] = choice.question_order;
+
                         // Storing answers in a Session
                         if (Session["Answers"] != null)
                         {
@@ -219,7 +231,7 @@ namespace Survey_app
                         answer.a_text = selectedItems;
                         answer.choice_id = Int16.Parse(checkbox.SelectedValue);
                         int choiceID = answer.choice_id;
-                        Choice choice = QuestionDAO.GetQuestionOrder(choiceID);
+                        choice = QuestionDAO.GetQuestionOrder(choiceID);
                         Session["NextQID"] = choice.question_order;
 
 
@@ -248,7 +260,7 @@ namespace Survey_app
                         answer.choice_id = Int16.Parse(radioButton.SelectedValue);
                         answer.question_id = Int16.Parse(radioButton.Attributes["questionId"]);
                         int choiceID =answer.choice_id;
-                        Choice choice = QuestionDAO.GetQuestionOrder(choiceID);
+                        choice = QuestionDAO.GetQuestionOrder(choiceID);
                         Session["NextQID"] = choice.question_order;
                         
                         // Storing answers in a Session
@@ -305,13 +317,28 @@ namespace Survey_app
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /*
         protected void SkipButton_Click(object sender, EventArgs e)
         {
+            int num = 1;
+            
 
+            if(Session["first"] == null)
+            {
+                choice_txt = "skip";
+            }
+            else if(Session["first"] != null)
+            {
+                Session["first"] = num++;
+                choice_txt = "skip" + Session["first"].ToString();
+            }
+            questionId = (int)Session["CurrentQID"];
+            Choice choices1 = QuestionDAO.createSkipChoice(choice_txt,questionId) ;
+                
             Answer answer = new Answer();
-            answer.a_text = "";
-        //    answer.choice_id = null
-            answer.question_id = (int)Session["CurrentQID"];
+            answer.a_text = choice_txt;
+            answer.choice_id = choices1.choice_id;
+            answer.question_id = questionId;
 
             // Storing null answers in a Session
             if (Session["Answers"] != null)
@@ -327,7 +354,7 @@ namespace Survey_app
                 Session["Answers"] = answer;
             }
             Response.Redirect("SurveyQuestion.aspx");
-        }
+        }*/
 
         protected void cxlBtn_Click(object sender, EventArgs e)
         {

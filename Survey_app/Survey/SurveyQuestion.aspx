@@ -64,7 +64,7 @@
                  <td class="auto-style1">&nbsp;</td>
                  <td>
                      <asp:Button ID="nextBtn" runat="server" Text="Next" OnClick="NextBtnClick" style="color: #FFFFFF; background-color: #0033CC; margin-right:100px" />
-                     <asp:Button ID="btnSkip" runat="server" Text="Skip" OnClick="SkipButton_Click" style="color: #FFFFFF; background-color: #0033CC"/>
+                     <asp:Button ID="btnSkip" runat="server" Text="Skip" style="color: #FFFFFF; background-color: #0033CC"/>
                  </td>
                 <td>&nbsp;</td>
              <tr>

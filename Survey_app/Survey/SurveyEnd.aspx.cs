@@ -1,33 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using Survey_app.Model;
-using System.Data.SqlClient;
+using Survey_app.Model.DAO;
 
 namespace Survey_app
 {
     public partial class SurveyEnd : System.Web.UI.Page
     {
+        Member member;
+        Respondent respondent;
+        Answer answer;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBmanager db = new DBmanager();
-            db.conn.Open();
 
-            // 2. Retrieve the answers from the session
-            List<Answer> answers = (List<Answer>)Session["Answers"];
-            var rows = 0;
-            // 3. Insert each answer into the database
-            foreach (Answer answer in answers)
-            {
-                string query = "INSERT INTO Answer (Answer_text, Choice_id) VALUES (@a_text,@choice_id)";
-                SqlCommand command = new SqlCommand(query, db.conn);
-                command.Parameters.AddWithValue("@a_text", answer.a_text);
-                command.Parameters.AddWithValue("@choice_id", answer.choice_id);
-              //  sqlCommand.Parameters.AddWithValue("@respondent_id", answer.respondent_id);
-                rows += command.ExecuteNonQuery();
-            }
+            
+                //Insert Member table
+                List<Member> member = (List<Member>)Session["SMember"];
+                int memberId = RespondentDAO.InsertMember(member);
+           
+                //Insert Respondent table
+                List<Respondent> respondentList = (List<Respondent>)Session["SRespondent"];
+                int respondentId = RespondentDAO.InsertRespondent(respondentList,memberId);
 
-            // 4. Close the database connection
-            db.closeConnection();
+                List<Answer> answer = (List<Answer>)Session["Answers"];
+                AnswerDAO.InsertAnswer(answer,respondentId); 
+
+
+            //Add respondent ID into Answer session
+            /*
+            respondent.res_id = answer.respondent_id;
+            List<Answer> answers = new List<Answer>();
+            answers.Add(answer);
+            Session["Answers"] = answers;
+            List<Answer> answers1 = (List<Answer>)Session["Answers"];
+            AnswerDAO.InsertAnswer(answers1);*/
+
+
         }
     }
 }
