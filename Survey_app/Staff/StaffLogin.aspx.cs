@@ -10,6 +10,13 @@ using Survey_app.Model;
 
 namespace Survey_app.Staff
 {
+
+    /* Dear Kriss
+     
+    UserId:shiori	
+    Password:123456
+    
+     */
     
     public partial class StaffLogin : System.Web.UI.Page
     {
@@ -32,7 +39,7 @@ namespace Survey_app.Staff
             else
                 errorLabel.Text = "Incorrect username or password";
 
-           
+         
         }
 
         public bool Login(string username, string password)

@@ -71,20 +71,21 @@
             <asp:Label ID="Label11" runat="server" Text="First name :"></asp:Label>
                 </td>
                 <td class="auto-style6">
-            <asp:TextBox ID="firstnameTxtBox0" runat="server"></asp:TextBox>
+            <asp:TextBox ID="firstnameTxtBox" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style8">
             <asp:Label ID="Label3" runat="server" Text="State/Territory :"></asp:Label>
                 </td>
                 <td class="auto-style2">
-            <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="80px">
-                <asp:ListItem>WA</asp:ListItem>
-                <asp:ListItem>QLD</asp:ListItem>
-                <asp:ListItem>NSW</asp:ListItem>
-                <asp:ListItem>VIC</asp:ListItem>
-                <asp:ListItem>SA</asp:ListItem>
-                <asp:ListItem>NT</asp:ListItem>
-                <asp:ListItem>TAS</asp:ListItem>
+            <asp:DropDownList ID="StateDropDownList" runat="server" Height="16px" Width="80px">
+                <asp:ListItem>-Select-</asp:ListItem>
+                <asp:ListItem Value="1">WA</asp:ListItem>
+                <asp:ListItem Value="2">QLD</asp:ListItem>
+                <asp:ListItem Value="3">NSW</asp:ListItem>
+                <asp:ListItem Value="4">VIC</asp:ListItem>
+                <asp:ListItem Value="5">SA</asp:ListItem>
+                <asp:ListItem Value="6">NT</asp:ListItem>
+                <asp:ListItem Value="7">TAS</asp:ListItem>
             </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -100,12 +101,13 @@
             <asp:Label ID="Label5" runat="server" Text="Bank :"></asp:Label>
                 </td>
                 <td class="auto-style2">
-            <asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem Value="nab">NAB</asp:ListItem>
-                <asp:ListItem Value="common">Common Wealth</asp:ListItem>
-                <asp:ListItem Value="west">Westpac</asp:ListItem>
-                <asp:ListItem Value="anz">ANZ</asp:ListItem>
-                <asp:ListItem Value="bendigo">Bendigo</asp:ListItem>
+            <asp:DropDownList ID="BankDropDownList" runat="server">
+                <asp:ListItem>-Select-</asp:ListItem>
+                <asp:ListItem Value="1">NAB</asp:ListItem>
+                <asp:ListItem Value="2">Commonwealth bank</asp:ListItem>
+                <asp:ListItem Value="3">Westpac</asp:ListItem>
+                <asp:ListItem Value="4">ANZ</asp:ListItem>
+                <asp:ListItem Value="5">Bendigo bank</asp:ListItem>
             </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -115,18 +117,19 @@
             <asp:Label ID="Label6" runat="server" Text="Gender :"></asp:Label>
                 </td>
                 <td class="auto-style6">
-            <asp:RadioButton ID="RadioButton2" runat="server" Text="Male" />
-            <asp:RadioButton ID="RadioButton1" runat="server" Text="Female" />
+            <asp:RadioButton ID="RadioButton2" runat="server" Text="Male" GroupName="Gender" />
+            <asp:RadioButton ID="RadioButton1" runat="server" Text="Female" GroupName="Gender" />
                 </td>
                 <td class="auto-style8">
             <asp:Label ID="Label7" runat="server" Text="Bank services :"></asp:Label>
                 </td>
                 <td class="auto-style2">
-            <asp:DropDownList ID="DropDownList3" runat="server">
-                <asp:ListItem Value="internet">Internet Banking</asp:ListItem>
-                <asp:ListItem Value="home">Home Loan</asp:ListItem>
-                <asp:ListItem Value="credit">Credit card</asp:ListItem>
-                <asp:ListItem Value="share">Share Investment</asp:ListItem>
+            <asp:DropDownList ID="ServiceDropDownList" runat="server">
+                <asp:ListItem>-Select-</asp:ListItem>
+                <asp:ListItem Value="1">Internet Banking</asp:ListItem>
+                <asp:ListItem Value="2">Home Loan</asp:ListItem>
+                <asp:ListItem Value="3">Credit card</asp:ListItem>
+                <asp:ListItem Value="4">Share Investment</asp:ListItem>
             </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -136,11 +139,12 @@
             <asp:Label ID="Label8" runat="server" Text="Age range :"></asp:Label>
                 </td>
                 <td class="auto-style6">
-            <asp:DropDownList ID="DropDownList4" runat="server" >
-                <asp:ListItem Value="1">18 - 25</asp:ListItem>
-                <asp:ListItem Value="2">26 - 35</asp:ListItem>
-                <asp:ListItem Value="3">36 - 45</asp:ListItem>
-                <asp:ListItem Value="4">46 - 55</asp:ListItem>
+            <asp:DropDownList ID="AgeDropDownList" runat="server" >
+                <asp:ListItem>-Select-</asp:ListItem>
+                <asp:ListItem Value="1">18-25</asp:ListItem>
+                <asp:ListItem Value="2">26-35</asp:ListItem>
+                <asp:ListItem Value="3">36-45</asp:ListItem>
+                <asp:ListItem Value="4">46-55</asp:ListItem>
                 <asp:ListItem Value="5">Other</asp:ListItem>
             </asp:DropDownList>
                 </td>
@@ -148,14 +152,15 @@
             <asp:Label ID="Label9" runat="server" Text="Newspaper :"></asp:Label>
                 </td>
                 <td class="auto-style2">
-            <asp:DropDownList ID="DropDownList5" runat="server">
-                <asp:ListItem Value="property">Property</asp:ListItem>
-                <asp:ListItem Value="sport">Sport</asp:ListItem>
-                <asp:ListItem Value="financial">Financial</asp:ListItem>
-                <asp:ListItem Value="entertaiment">Entertaiment</asp:ListItem>
-                <asp:ListItem Value="lifestyle">Lifestyle</asp:ListItem>
-                <asp:ListItem Value="travel">Travel</asp:ListItem>
-                <asp:ListItem Value="politics">Politics</asp:ListItem>
+            <asp:DropDownList ID="NewsPDropDownList" runat="server">
+                <asp:ListItem>-Select-</asp:ListItem>
+                <asp:ListItem Value="1">Property</asp:ListItem>
+                <asp:ListItem Value="2">Sport</asp:ListItem>
+                <asp:ListItem Value="3">Financial</asp:ListItem>
+                <asp:ListItem Value="4">Entertaiment</asp:ListItem>
+                <asp:ListItem Value="5">Lifestyle</asp:ListItem>
+                <asp:ListItem Value="6">Travel</asp:ListItem>
+                <asp:ListItem Value="7">Politics</asp:ListItem>
             </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -176,7 +181,7 @@
             </tr>
             <tr>
                 <td colspan="5" style="text-align:center" class="auto-style10">
-                <asp:Button ID="searchBtn" runat="server" Height="27px" style="color: #FFFFFF; background-color: #666666" Text="SEARCH" Width="522px" />
+                <asp:Button ID="searchBtn" runat="server" Height="27px" style="color: #FFFFFF; background-color: #666666" Text="SEARCH" Width="522px" OnClick="searchBtn_Click" />
                 </td>
             </tr>
             <tr>

@@ -51,13 +51,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// firstnameTxtBox0 control.
+        /// firstnameTxtBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstnameTxtBox0;
+        protected global::System.Web.UI.WebControls.TextBox firstnameTxtBox;
 
         /// <summary>
         /// Label3 control.
@@ -69,13 +69,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// StateDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList StateDropDownList;
 
         /// <summary>
         /// Label4 control.
@@ -105,13 +105,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// BankDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList BankDropDownList;
 
         /// <summary>
         /// Label6 control.
@@ -150,13 +150,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// DropDownList3 control.
+        /// ServiceDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ServiceDropDownList;
 
         /// <summary>
         /// Label8 control.
@@ -168,13 +168,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// DropDownList4 control.
+        /// AgeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList AgeDropDownList;
 
         /// <summary>
         /// Label9 control.
@@ -186,13 +186,13 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// DropDownList5 control.
+        /// NewsPDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList NewsPDropDownList;
 
         /// <summary>
         /// searchBtn control.
