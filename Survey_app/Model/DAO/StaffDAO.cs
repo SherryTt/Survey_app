@@ -1,11 +1,9 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Survey_app.Model.DAO
 {
     public class StaffDAO
     {
-
         public Staff StaffLoginbyIdandPass(string username, string password)
         {
 

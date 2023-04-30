@@ -5,7 +5,8 @@ namespace Survey_app.Model.DAO
 {
     public class AnswerDAO
     {
-        public static void InsertAnswer(List<Answer> answers,int respondentId) {
+        public static void InsertAnswer(List<Answer> answers, int respondentId)
+        {
 
             DBmanager db = new DBmanager();
             db.openConnection();
@@ -16,11 +17,11 @@ namespace Survey_app.Model.DAO
                 SqlCommand command = new SqlCommand(query, db.conn);
                 command.Parameters.AddWithValue("@a_text", answer.a_text);
                 command.Parameters.AddWithValue("@choice_id", answer.choice_id);
-                command.Parameters.AddWithValue("@respondent_id",respondentId);
+                command.Parameters.AddWithValue("@respondent_id", respondentId);
                 int rows = command.ExecuteNonQuery();
             }
 
             db.closeConnection();
-        } 
-   }
+        }
+    }
 }

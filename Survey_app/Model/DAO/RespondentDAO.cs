@@ -16,9 +16,9 @@ namespace Survey_app.Model.DAO
                 db.openConnection();
                 int memberId = -1;
 
-               foreach(Member member1 in member)
+                foreach (Member member1 in member)
                 {
-                    String query =@"INSERT INTO Member (Given_name, Last_name, DOB, Phone_num)
+                    String query = @"INSERT INTO Member (Given_name, Last_name, DOB, Phone_num)
                                                          VALUES (@givenName, @lastName, @DOB, @phoneNum);
                                                         SELECT SCOPE_IDENTITY()";
                     SqlCommand command = new SqlCommand(query, db.conn);
@@ -38,7 +38,7 @@ namespace Survey_app.Model.DAO
             }
         }
 
-        public static int InsertRespondent(List<Respondent> respondents,int memberId)
+        public static int InsertRespondent(List<Respondent> respondents, int memberId)
         {
             try
             {
@@ -57,20 +57,18 @@ namespace Survey_app.Model.DAO
                     command.Parameters.AddWithValue("@res_Ip", respondent.res_Ip);
                     command.Parameters.AddWithValue("@res_DataStamp", respondent.res_DateStamp);
                     command.Parameters.AddWithValue("@Member_id", memberId);
-                   // command.ExecuteNonQuery();
+                    // command.ExecuteNonQuery();
                     respondentId = Convert.ToInt32(command.ExecuteScalar());
                 }
 
                 db.closeConnection();
-                  return respondentId;
+                return respondentId;
             }
             catch (Exception)
             {
                 throw;
             }
         }
-
-
 
 
         public static Respondent getRespondentId(string res_Ip)
@@ -97,7 +95,6 @@ namespace Survey_app.Model.DAO
         }
 
 
-
         public static string GetIPAddress()
         {
             System.Web.HttpContext context = System.Web.HttpContext.Current;
@@ -113,33 +110,6 @@ namespace Survey_app.Model.DAO
             }
             return context.Request.ServerVariables["REMOTE_ADDR"];
         }
-        /*
-        public static List<Respondent> GetAllRespondents()
-        {
-            //Connect to DB
-            DBmanager db = new DBmanager();
-            db.conn.Open();
-
-
-            List<Respondent> respondents = new List<Respondent>();
-
-            // Execute the SQL Command
-            string query = "SELECT * FROM Respondent";
-            SqlCommand command = new SqlCommand(query, db.conn);
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                var respondent = new Respondent();
-                respondent.choice_id = (int)reader["Choice_id"];
-                choice.choice_text = reader["Choice_text"].ToString();
-                choice.max_choice = (int)reader["Max_choice"];
-                choice.q_id = (int)reader["Question_id"];
-                choice.question_order = (int)reader["Question_order"];
-                choices.Add(choice);
-            }
-            db.closeConnection();
-            return choices;
-        }
-        */
+       
     }
 }

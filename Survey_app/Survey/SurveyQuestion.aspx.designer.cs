@@ -60,15 +60,6 @@ namespace Survey_app
         protected global::System.Web.UI.WebControls.Button nextBtn;
 
         /// <summary>
-        /// btnSkip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSkip;
-
-        /// <summary>
         /// alertLbl control.
         /// </summary>
         /// <remarks>

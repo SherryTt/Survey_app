@@ -8,10 +8,12 @@
     <style type="text/css">
         .auto-style1 {
             text-align: right;
+            width: 258px;
         }
         .auto-style2 {
             text-align: right;
             height: 26px;
+            width: 258px;
         }
         .auto-style3 {
             height: 26px;

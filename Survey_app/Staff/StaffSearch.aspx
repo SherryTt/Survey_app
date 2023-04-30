@@ -40,6 +40,11 @@
         }
 
         
+        .auto-style11 {
+            text-align: center;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -209,8 +214,8 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td colspan="5">
-                <asp:GridView ID="GridView" runat="server"></asp:GridView>
+                <td colspan="5" class="auto-style11">
+                <asp:GridView ID="GridView"  align="center" runat="server"></asp:GridView>
                 </td>
             </tr>
             </table>

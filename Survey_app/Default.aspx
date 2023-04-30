@@ -11,7 +11,7 @@
             width: 331px;
             }
         .auto-style1 {
-            text-align: right;
+            text-align: center;
         }
         .auto-style2 {
             color: #FFFFFF;
@@ -32,7 +32,7 @@
          <a href="/Staff/StaffLogin.aspx">
         <input ID="adminBtn" type="button" value="ADMIN" class="auto-style2: right"/><span class="auto-style2"> </span>
         </a></div>
-         <div class="auto-style1"style="text-align: left" >
+         <div class="auto-style1" >
         <br />
         <asp:Label ID="Label2" runat="server" Text="This is a survey for researching a user needs regarding a banks and newspaper.This survey will take around 10 minutes to complete."></asp:Label>
         <br />

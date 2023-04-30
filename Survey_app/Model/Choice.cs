@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 
 namespace Survey_app.Model
 {
@@ -13,7 +10,5 @@ namespace Survey_app.Model
         public int question_order { get; set; }
         public int max_choice { get; set; }
 
-     
-       
     }
 }
